@@ -1,0 +1,8 @@
+PUT http://localhost:5000/api/user/621fabe047c601237410c16b HTTP/1.1
+content-type: application/json
+
+{
+    "userId": "621fabe047c601237410c16b",
+    "password" : "batman2",
+    "username" : "batman2"
+}

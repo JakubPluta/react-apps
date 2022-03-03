@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/post/ HTTP/1.1
+content-type: application/json
+
+{
+    "userId": "622098301506fcc79630c373",
+    "desc" : "my name is user1"
+}

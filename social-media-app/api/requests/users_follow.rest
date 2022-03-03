@@ -1,0 +1,6 @@
+PUT http://localhost:5000/api/user/622098301506fcc79630c373/follow HTTP/1.1
+content-type: application/json
+
+{
+    "userId": "622098471506fcc79630c375"
+}

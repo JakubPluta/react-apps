@@ -2,3 +2,5 @@
 /weather-app-v2/src/.env 
 /weather-app-v2/.env 
 /weather-app/node_modules
+/social-media-app/api/node_modules
+/social-media-app/api/.env
