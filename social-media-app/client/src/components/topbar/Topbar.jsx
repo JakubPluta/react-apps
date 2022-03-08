@@ -1,13 +1,19 @@
 import React from "react";
 import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Topbar = () => {
+  const { user } = useContext(AuthContext);
+  const publicAssetsFolder = process.env.REACT_APP_ASSET_DIR;
+
   return (
     <div className="topbarContainer">
-      <div className="topbarLeft">
+      <Link to="/" style={{ textDecoration: "none" }}>
         <span className="logo">Soulmates</span>
-      </div>
+      </Link>
       <div className="topbarCenter">
         <div className="searchBar">
           <Search className="searchIcon" />
@@ -37,7 +43,17 @@ const Topbar = () => {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        <img src="/assets/person/1.jpeg" alt="noimage" className="topbarImg" />
+        <Link to={`/profile/${user.username}`}>
+          <img
+            src={
+              user.profilePicture
+                ? `${publicAssetsFolder}${user.profilePicture}`
+                : `${publicAssetsFolder}person/noAvatar.png`
+            }
+            alt="noimage"
+            className="topbarImg"
+          />
+        </Link>
       </div>
     </div>
   );
